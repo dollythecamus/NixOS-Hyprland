@@ -51,26 +51,17 @@
 
     ## BOOT LOADERS: NOTE USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
+    loader.systemd-boot.enable = false;
   
-    loader.efi = {
-	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-	    canTouchEfiVariables = true;
-  	  };
-
     loader.timeout = 5;    
-  			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
-
+	
+	loader.grub.enable = true;
+	loader.grub.device = "nodev";
+	loader.grub.useOSProber = true;
+	loader.grub.efiSupport = true;
+ 	loader.efi.canTouchEfiVariables = true;
+	loader.efi.efiSysMountPoint = "/boot";
+ 	
     # Bootloader GRUB theme, configure below
 
     ## -end of BOOTLOADERS----- ##
@@ -94,6 +85,31 @@
     plymouth.enable = true;
   };
 
+ # Load nvidia driver for wayland
+  services.xserver.videoDrivers = ["nvidia"];
+ # Nvidia settings
+  hardware.nvidia = {
+	modesetting.enable = true;
+	powerManagement.finegrained = false;
+
+	open = false;
+
+	nvidiaSettings = true;
+
+	package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+  };
+
+  hardware.nvidia.prime = {
+    offload = {
+	enable = true;
+	enableOffloadCmd = true;
+     };
+    # make sure to get these Bus ID Values right.
+    nvidiaBusId = "PCI:1:0:0";
+    amdgpuBusId = "PCI:54:0:0"; # For AMD integrated graphics (?) not sure
+  };
+
   # GRUB Bootloader theme. Of course you need to enable GRUB above.. duh! and also, enable it on flake.nix
   #distro-grub-themes = {
   #  enable = true;
@@ -102,13 +118,9 @@
 
   # Extra Module Options
   drivers.amdgpu.enable = true;
-  drivers.intel.enable = true;
-  drivers.nvidia.enable = false;
-  drivers.nvidia-prime = {
-    enable = false;
-    intelBusID = "";
-    nvidiaBusID = "";
-  };
+  drivers.intel.enable = false;
+  drivers.nvidia.enable = true;
+
   vm.guest-services.enable = false;
   local.hardware-clock.enable = false;
 
@@ -143,7 +155,7 @@
   # Services to start
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "";
@@ -193,7 +205,7 @@
     nfs.server.enable = false;
   
     openssh.enable = true;
-    flatpak.enable = false;
+    flatpak.enable = true; # previously false
 	
   	blueman.enable = true;
   	

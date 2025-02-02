@@ -82,13 +82,16 @@
     xarchiver
     yad
     yt-dlp
-    prismlauncher # Minecraft
+
+ # Commented most of these because now installing with flatpak
+ # flatpak feels more reliable, still experimenting
+    # prismlauncher # Minecraft
     obsidian # Obsidian
     ckan # KSP Moding
-    godot_4 # Godot 4, for gamedev
-    blender # Blender, for 3D modeling, CAD and rendering
-    krita # Krita, painting software
-    obs-studio # OBS for streaming
+    # godot_4 # Godot 4, for gamedev
+    # blender # Blender, for 3D modeling, CAD and rendering
+    # krita # Krita, painting software
+    # obs-studio # OBS for streaming
 
 
     #waybar  # if wanted experimental next line
@@ -157,9 +160,8 @@
     };
 	
   };
-
   # OBS Virtual camera
-  programs.obs-studio.enableVirtualCamera = true;
+  # programs.obs-studio.enableVirtualCamera = true;
 
   # Steam, for gaming
   programs.steam = {
