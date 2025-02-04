@@ -7,9 +7,10 @@ set -e
 OK="$(tput setaf 2)[OK]$(tput sgr0)"
 ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
 NOTE="$(tput setaf 3)[NOTE]$(tput sgr0)"
-WARN="$(tput setaf 5)[WARN]$(tput sgr0)"
+WARN="$(tput setaf 1)[WARN]$(tput sgr0)"
 CAT="$(tput setaf 6)[ACTION]$(tput sgr0)"
-ORANGE=$(tput setaf 166)
+MAGENTA=$(tput setaf 5)
+WARNING=$(tput setaf 1)
 YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
@@ -76,6 +77,19 @@ if command -v lspci > /dev/null 2>&1; then
     echo "${NOTE} Nvidia GPU detected. Setting up for nvidia..."
     sed -i '/drivers\.nvidia\.enable = false;/s/drivers\.nvidia\.enable = false;/ drivers.nvidia.enable = true;/' hosts/default/config.nix
   fi
+fi
+
+echo "-----"
+printf "\n%.0s" {1..1}
+
+# Aylurs GTK Shell v1 installation option
+read -p "${CAT} Do you want to add ${MAGENTA}AGS or aylur's gtk shell v1${RESET} for Desktop Overview Like? (Y/n): " answer
+
+answer=${answer:-Y}
+
+if [[ "$answer" == "n" || "$answer" == "N" ]]; then
+    sed -i 's|^\([[:space:]]*\)ags.url = "github:aylur/ags/v1";|\1#ags.url = "github:aylur/ags/v1";|' flake.nix
+    sed -i 's|^\([[:space:]]*\)ags|\1#ags|' hosts/default/packages-fonts.nix
 fi
 
 echo "-----"
