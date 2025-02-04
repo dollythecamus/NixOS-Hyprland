@@ -85,16 +85,26 @@
 
  # Commented most of these because now installing with flatpak
  # flatpak feels more reliable, still experimenting
+ # update: flatpak isn't exactly more reliable, I can and should still use these.
     # prismlauncher # Minecraft
     obsidian # Obsidian
     ckan # KSP Moding
-    # godot_4 # Godot 4, for gamedev
-    # blender # Blender, for 3D modeling, CAD and rendering
-    # krita # Krita, painting software
-    # obs-studio # OBS for streaming
+    godot_4 # Godot 4, for gamedev
+    blender # Blender, for 3D modeling, CAD and rendering
+    krita # Krita, painting software
+    # obs-studio # OBS for streaming # via flatpak
+    qbittorrent # torrent client
 
+    everforest-gtk-theme # Everforest!
+    
+    lutris # Lutris to install/run pirated games 
+
+    wine # Windows game runner
+
+    github-desktop # to use github without problems
 
     #waybar  # if wanted experimental next line
+
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
 	  python-packages
