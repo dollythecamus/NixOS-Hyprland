@@ -54,6 +54,9 @@ https://github.com/JaKooLit/screenshots/assets/71ccd129-f6e0-4d79-aa09-9143511fe
 
 </div>
 
+> ![INFO]
+> I (dollythecamus) do not like being perceived. This repo is a fork for my own NixOS configuration that is similar to the original. It's for my own machine and I'm such a begginer on linux and dev in general that I won't help anybody fix anything if they get my files to do something that doesn't work... 
+
 > [!CAUTION]
 > This is not purely written in Nix-Language. You should check ZaneyOS. Link below
 
