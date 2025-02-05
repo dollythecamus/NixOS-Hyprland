@@ -98,10 +98,14 @@
     everforest-gtk-theme # Everforest!
     
     lutris # Lutris to install/run pirated games 
-
     wine # Windows game runner
 
     github-desktop # to use github without problems
+
+    gnumake # 'make' command to work with software development
+    libgcc # software development with C, C++ and C#
+    dotnet-sdk_9 # .NET software development with C, C++ and C#
+    raylib # simple games programming in many languages  
 
     #waybar  # if wanted experimental next line
 

@@ -24,6 +24,10 @@
 
   # BOOT related stuff
   boot = {
+
+	# Enable NTFS to use the files in external hard drive
+    supportedFilesystems = [ "ntfs" ];
+
     kernelPackages = pkgs.linuxPackages_zen; # Kernel
     #kernelPackages = pkgs.linuxPackages_latest; # Kernel 
 
