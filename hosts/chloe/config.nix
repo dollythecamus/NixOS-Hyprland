@@ -120,7 +120,7 @@
   #  theme = "nixos";
   #};
 
-  # Extra Module Options
+   # Extra Module Options
   drivers.amdgpu.enable = true;
   drivers.intel.enable = false;
   drivers.nvidia.enable = true;

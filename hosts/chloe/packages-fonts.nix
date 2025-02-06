@@ -33,7 +33,7 @@
     libnotify
     openssl #required by Rainbow borders
     pciutils
-    vim
+    neovim # neovim
     wget
     xdg-user-dirs
     xdg-utils
@@ -83,16 +83,14 @@
     yad
     yt-dlp
 
- # Commented most of these because now installing with flatpak
- # flatpak feels more reliable, still experimenting
- # update: flatpak isn't exactly more reliable, I can and should still use these.
-    # prismlauncher # Minecraft
+
+    # prismlauncher # Minecraft # via flatpak (for now.)
     obsidian # Obsidian
     ckan # KSP Moding
     godot_4 # Godot 4, for gamedev
     blender # Blender, for 3D modeling, CAD and rendering
     krita # Krita, painting software
-    # obs-studio # OBS for streaming # via flatpak
+    # obs-studio # OBS for streaming # via flatpak (for now.)
     qbittorrent # torrent client
 
     everforest-gtk-theme # Everforest!
@@ -102,10 +100,12 @@
 
     github-desktop # to use github without problems
 
-    gnumake # 'make' command to work with software development
-    libgcc # software development with C, C++ and C#
-    dotnet-sdk_9 # .NET software development with C, C++ and C#
-    raylib # simple games programming in many languages  
+    # gnumake # 'make' command to work with software development
+    # libgcc # software development with C, C++ and C#
+    # dotnet-sdk_9 # .NET software development with C, C++ and C#
+    # raylib # simple games programming in many languages  
+
+    # vscode # vscode!
 
     #waybar  # if wanted experimental next line
 
