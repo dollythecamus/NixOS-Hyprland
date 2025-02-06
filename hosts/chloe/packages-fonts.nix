@@ -100,6 +100,8 @@
 
     github-desktop # to use github without problems
 
+    gparted # to mount that new ssd drive
+
     # gnumake # 'make' command to work with software development
     # libgcc # software development with C, C++ and C#
     # dotnet-sdk_9 # .NET software development with C, C++ and C#
