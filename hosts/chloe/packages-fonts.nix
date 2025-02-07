@@ -82,24 +82,9 @@
     xarchiver
     yad
     yt-dlp
-
-
-    # prismlauncher # Minecraft # via flatpak (for now.)
-    obsidian # Obsidian
-    ckan # KSP Moding
-    godot_4 # Godot 4, for gamedev
-    blender # Blender, for 3D modeling, CAD and rendering
-    krita # Krita, painting software
-    # obs-studio # OBS for streaming # via flatpak (for now.)
-    qbittorrent # torrent client
-
-    everforest-gtk-theme # Everforest!
     
-    lutris # Lutris to install/run pirated games 
+    everforest-gtk-theme # Everforest!
     wine # Windows game runner
-
-    github-desktop # to use github without problems
-
     gparted # to mount that new ssd drive
 
     # gnumake # 'make' command to work with software development
@@ -155,13 +140,6 @@
   	  ];
 	
     virt-manager.enable = false;
-    
-    #steam = {
-    #  enable = true;
-    #  gamescopeSession.enable = true;
-    #  remotePlay.openFirewall = true;
-    #  dedicatedServer.openFirewall = true;
-    #};
     
     xwayland.enable = true;
 

@@ -26,6 +26,16 @@ in
 
     # define user packages here
     packages = with pkgs; [
+            prismlauncher # Minecraft # via flatpak (for now.)
+            obsidian # Obsidian
+            ckan # KSP Moding
+            godot_4 # Godot 4, for gamedev
+            blender # Blender, for 3D modeling, CAD and rendering
+            krita # Krita, painting software
+            obs-studio # OBS for streaming # via flatpak (for now.)
+            qbittorrent # torrent client
+            github-desktop # to use github without problems
+            lutris # games 
       ];
     };
     

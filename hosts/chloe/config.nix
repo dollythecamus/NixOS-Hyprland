@@ -54,17 +54,18 @@
     #};
 
     ## BOOT LOADERS: NOTE USE ONLY 1. either systemd or grub  
-    # Bootloader SystemD
+    # Disable Systemd Bootloader
     loader.systemd-boot.enable = false;
-  
-    loader.timeout = 5;    
-	
-	loader.grub.enable = true;
-	loader.grub.device = "nodev";
-	loader.grub.useOSProber = true;
-	loader.grub.efiSupport = true;
- 	loader.efi.canTouchEfiVariables = true;
-	loader.efi.efiSysMountPoint = "/boot";
+    
+    # Enable Grub
+    loader = {
+      	grub.enable = true;
+      	grub.device = "nodev";
+      	grub.useOSProber = true;
+      	grub.efiSupport = true;
+      	efi.efiSysMountPoint = "/boot";
+      	efi.canTouchEfiVariables = true;
+    };
  	
     # Bootloader GRUB theme, configure below
 
@@ -209,7 +210,7 @@
     nfs.server.enable = false;
   
     openssh.enable = true;
-    flatpak.enable = true; # previously false
+    flatpak.enable = false;
 	
   	blueman.enable = true;
   	
